@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "remix";
 import { ModalProps } from "~/types/types";
 
 const Modal = ({ icon, title, message, iconStyle }: ModalProps) => {

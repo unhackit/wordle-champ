@@ -16,6 +16,7 @@ export let loader: LoaderFunction = async ({ request }) => {
 const Leaderboard = () => {
     const submit = useSubmit();
     const { users, totalUsers, page, lastPage, perPage } = useLoaderData();
+    console.log("users", users);
 
     const paginate = (goTo: number) => {
         if (goTo < 1 || goTo > +lastPage) {
@@ -42,20 +43,24 @@ const Leaderboard = () => {
                                 </tr>
                             </thead>
                             <tbody className="">
-                                {users.map((user: User, i: number) => (
-                                    <tr className="border-b-2 border-solid" key={i}>
-                                        <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
-                                            #{i + 1 + perPage * page - perPage}
-                                        </td>
-                                        <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
-                                            {user.username}
-                                        </td>
-                                        <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
-                                            {user.country + " " + user.countryEmoji}
-                                        </td>
-                                        <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>{user.score}</td>
-                                    </tr>
-                                ))}
+                                {users.length
+                                    ? users.map((user: User, i: number) => (
+                                          <tr className="border-b-2 border-solid" key={i}>
+                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                                  #{i + 1 + perPage * page - perPage}
+                                              </td>
+                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                                  {user.username}
+                                              </td>
+                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                                  {user.country + " " + user.countryEmoji}
+                                              </td>
+                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                                  {user.score}
+                                              </td>
+                                          </tr>
+                                      ))
+                                    : null}
                             </tbody>
                         </table>
                         <Pagination users={users} paginate={paginate} totalUsers={totalUsers} page={page} lastPage={lastPage} />
