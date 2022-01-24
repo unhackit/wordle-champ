@@ -7,13 +7,13 @@ const Pagination = ({ users, paginate, totalUsers, page, lastPage }: PaginationP
                 <ul className="flex justify-center items-center">
                     <li
                         onClick={() => paginate(1)}
-                        className={`${page === 1 ? "disabled" : ""} mr-2 text-blue-600 font-bold cursor-pointer`}
+                        className={`${page === 1 ? "disabled" : ""} mr-2 text-blue-600 text-sm md:text-base font-bold cursor-pointer`}
                     >
                         <span>First</span>
                     </li>
                     <li
                         onClick={() => paginate(+page - 1)}
-                        className={`${page === 1 ? "disabled" : ""}  mr-2 text-blue-600 font-bold cursor-pointer`}
+                        className={`${page === 1 ? "disabled" : ""}  mr-2 text-blue-600 text-sm md:text-base font-bold cursor-pointer`}
                     >
                         <span>Previous</span>
                     </li>
@@ -24,7 +24,7 @@ const Pagination = ({ users, paginate, totalUsers, page, lastPage }: PaginationP
                                 key={index}
                                 className={`${
                                     page === item ? "active" : ""
-                                } mx-2 border-2 rounded-full border-blue-600 w-8 cursor-pointer text-lg text-center text-blue-600`}
+                                } mx-2 border-2 rounded-full border-blue-600 w-8 cursor-pointer text-center text-blue-600 text-sm md:text-lg`}
                                 onClick={() => paginate(item)}
                             >
                                 <span>{item}</span>
@@ -33,13 +33,17 @@ const Pagination = ({ users, paginate, totalUsers, page, lastPage }: PaginationP
                     })}
                     <li
                         onClick={() => paginate(+page + 1)}
-                        className={`${page === lastPage ? "disabled" : ""} ml-2 text-blue-600 font-bold cursor-pointer`}
+                        className={`${
+                            page === lastPage ? "disabled" : ""
+                        } ml-2 text-blue-600 text-sm md:text-base font-bold cursor-pointer`}
                     >
                         <span>Next</span>
                     </li>
                     <li
                         onClick={() => paginate(lastPage)}
-                        className={`${page === lastPage ? "disabled" : ""} ml-2 text-blue-600 font-bold cursor-pointer`}
+                        className={`${
+                            page === lastPage ? "disabled" : ""
+                        } ml-2 text-blue-600 text-sm md:text-base font-bold cursor-pointer`}
                     >
                         <span>Last</span>
                     </li>

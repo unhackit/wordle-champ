@@ -4,6 +4,9 @@ module.exports = {
     darkMode: "class", // or 'media' or 'class'
     theme: {
         extend: {
+            screens: {
+                short: { raw: "(max-height: 680px)" },
+            },
             fontFamily: {
                 courgette: ['"Courgette"', "cursive"],
             },

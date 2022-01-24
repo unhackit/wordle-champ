@@ -1,5 +1,5 @@
 {
-  "version": "fced7dfa",
+  "version": "aacf5aab",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-YJYTQC5D.js",
+      "module": "/build/root-ATZXQQMQ.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -38,7 +38,7 @@
       "id": "routes/leaderboard",
       "parentId": "root",
       "path": "leaderboard",
-      "module": "/build/routes/leaderboard-DFDNF4AB.js",
+      "module": "/build/routes/leaderboard-YZBAFYOE.js",
       "imports": [
         "/build/_shared/chunk-ZVDZFBK3.js"
       ],
@@ -51,7 +51,7 @@
       "id": "routes/login",
       "parentId": "root",
       "path": "login",
-      "module": "/build/routes/login-NBSVA4GQ.js",
+      "module": "/build/routes/login-A3HSJ5B2.js",
       "imports": [
         "/build/_shared/chunk-JHG2B4Q5.js"
       ],
@@ -77,7 +77,7 @@
       "id": "routes/play",
       "parentId": "root",
       "path": "play",
-      "module": "/build/routes/play-YSYQQY7G.js",
+      "module": "/build/routes/play-ZR7CQDKG.js",
       "imports": [
         "/build/_shared/chunk-ZVDZFBK3.js",
         "/build/_shared/chunk-JHG2B4Q5.js"
@@ -117,12 +117,12 @@
       "id": "routes/register",
       "parentId": "root",
       "path": "register",
-      "module": "/build/routes/register-I3UJZLLE.js",
+      "module": "/build/routes/register-3EFAYRST.js",
       "hasAction": true,
       "hasLoader": false,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-FCED7DFA.js"
+  "url": "/build/manifest-AACF5AAB.js"
 }

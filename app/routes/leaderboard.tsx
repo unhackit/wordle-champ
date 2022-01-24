@@ -16,7 +16,6 @@ export let loader: LoaderFunction = async ({ request }) => {
 const Leaderboard = () => {
     const submit = useSubmit();
     const { users, totalUsers, page, lastPage, perPage } = useLoaderData();
-    console.log("users", users);
 
     const paginate = (goTo: number) => {
         if (goTo < 1 || goTo > +lastPage) {
@@ -27,35 +26,51 @@ const Leaderboard = () => {
 
     return (
         <>
-            <div className="bg-blackbg h-screen w-screen">
+            <div className="bg-blackbg min-h-screen w-screen py-24">
                 <div className="flex justify-center items-center h-full w-full">
                     <div className="bg-white rounded-lg w-11/12 md:w-2/4 p-6 min-h-min">
                         <h3 className="text-center text-2xl mb-6 font-bold">Leaderboard</h3>
                         <table className="border-collapse w-full">
                             <thead>
                                 <tr className="shadow-md">
-                                    <th className="text-center py-6" onClick={() => paginate(1)}>
+                                    <th className="text-center py-6 text-sm md:text-base" onClick={() => paginate(1)}>
                                         Rank
                                     </th>
-                                    <th className="text-center py-6">Username</th>
-                                    <th className="text-center py-6">Country</th>
-                                    <th className="text-center py-6">Points</th>
+                                    <th className="text-center py-6 text-sm md:text-base">Username</th>
+                                    <th className="text-center py-6 text-sm md:text-base">Country</th>
+                                    <th className="text-center py-6 text-sm md:text-base">Points</th>
                                 </tr>
                             </thead>
                             <tbody className="">
                                 {users.length
                                     ? users.map((user: User, i: number) => (
                                           <tr className="border-b-2 border-solid" key={i}>
-                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                              <td
+                                                  className={`text-center py-4 text-sm md:text-base ${
+                                                      i === 0 ? "text-blue-600 font-bold" : null
+                                                  }`}
+                                              >
                                                   #{i + 1 + perPage * page - perPage}
                                               </td>
-                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                              <td
+                                                  className={`text-center py-4 text-sm md:text-base ${
+                                                      i === 0 ? "text-blue-600 font-bold" : null
+                                                  }`}
+                                              >
                                                   {user.username}
                                               </td>
-                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                              <td
+                                                  className={`text-center py-4 text-sm md:text-base ${
+                                                      i === 0 ? "text-blue-600 font-bold" : null
+                                                  }`}
+                                              >
                                                   {user.country + " " + user.countryEmoji}
                                               </td>
-                                              <td className={`text-center py-4 ${i === 0 ? "text-blue-600 font-bold" : null}`}>
+                                              <td
+                                                  className={`text-center py-4 text-sm md:text-base ${
+                                                      i === 0 ? "text-blue-600 font-bold" : null
+                                                  }`}
+                                              >
                                                   {user.score}
                                               </td>
                                           </tr>

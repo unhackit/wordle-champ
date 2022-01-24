@@ -640,18 +640,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 66.666667%;
 }
 
-.h-4\/5 {
-  height: 80%;
-}
-
 .min-h-min {
   min-height: -webkit-min-content;
   min-height: -moz-min-content;
   min-height: min-content;
-}
-
-.min-h-screen {
-  min-height: 100vh;
 }
 
 .w-14 {
@@ -771,10 +763,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 1rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .rounded-sm {
   border-radius: 0.125rem;
 }
@@ -889,14 +877,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 0.8;
 }
 
-.bg-opacity-10 {
-  --tw-bg-opacity: 0.1;
-}
-
-.bg-opacity-90 {
-  --tw-bg-opacity: 0.9;
-}
-
 .p-2 {
   padding: 0.5rem;
 }
@@ -919,10 +899,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-3 {
   padding: 0.75rem;
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .px-5 {
@@ -948,23 +924,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.pt-8 {
-  padding-top: 2rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
 }
 
 .text-center {
@@ -1012,11 +971,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
-}
-
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
 }
 
 .font-bold {
@@ -1128,18 +1082,6 @@ Ensure the default browser behavior of the `hidden` attribute.
           text-decoration-line: underline;
 }
 
-@media (min-width: 640px) {
-  .sm\:text-sm {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-
-  .sm\:text-xs {
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-}
-
 @media (min-width: 768px) {
   .md\:w-2\/4 {
     width: 50%;
@@ -1159,11 +1101,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
-
-  .md\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1179,14 +1116,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (max-height: 680px) {
-  .short\:h-3\/4 {
-    height: 75%;
-  }
-
-  .short\:h-10 {
-    height: 2.5rem;
-  }
-
   .short\:py-14 {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;

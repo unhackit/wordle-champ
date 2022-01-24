@@ -11,7 +11,7 @@ const Navbar = ({ user }: NavbarProps) => {
 
     return (
         <>
-            <div className="px-4 py-3 fixed top-0 w-full">
+            <div className="px-4 py-3 fixed top-0 w-full z-80 bg-blackbg bg-opacity-90">
                 <div className="flex justify-between">
                     <p className="text-white font-courgette text-3xl font-bold">Wordle Champ</p>
                     <div className="cursor-pointer" onClick={() => setNavbar(!navbar)}>

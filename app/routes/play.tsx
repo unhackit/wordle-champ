@@ -182,13 +182,13 @@ const Play = () => {
             <div className="bg-blackbg h-screen w-screen">
                 <div className="h-2/3 w-full flex items-center justify-center">
                     <div>
-                        <div className={`grid gap-4 grid-cols-5 grid-rows-5 p-3 ${wrongGuess ? "animate-shake" : null}`}>
+                        <div className={`grid gap-3 grid-cols-5 grid-rows-5 p-3 ${wrongGuess ? "animate-shake" : null}`}>
                             {responses.map((response, idx) => {
                                 return response.map((letter, i) => {
                                     return (
                                         <div
                                             key={i}
-                                            className={`border-gray-300 border-2 rounded-sm p-4 font-bold text-3xl w-14 h-12 flex items-center justify-center ${letter.className}`}
+                                            className={`border-gray-300 border-2 rounded-sm p-4 font-bold text-3xl w-14 h-12 short:h-10 flex items-center justify-center ${letter.className}`}
                                         >
                                             {letter.letter}
                                         </div>

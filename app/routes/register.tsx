@@ -47,7 +47,7 @@ const Register = () => {
         <>
             <div className="bg-blackbg h-screen w-screen">
                 <div className="h-full w-full flex items-center justify-center">
-                    <div className="bg-white w-11/12 md:w-2/4 lg:w-1/3 h-3/5 p-8 rounded-lg flex items-center justify-center">
+                    <div className="bg-white w-11/12 md:w-2/4 lg:w-1/3 h-4/5 p-8 rounded-lg flex items-center justify-center">
                         <Form
                             method="post"
                             className="w-full"
