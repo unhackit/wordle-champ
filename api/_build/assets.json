@@ -1,5 +1,5 @@
 {
-  "version": "4d6b7146",
+  "version": "f8e92b73",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-5L7PXLVX.js",
+      "module": "/build/root-ON6AIAGY.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -134,5 +134,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-4D6B7146.js"
+  "url": "/build/manifest-F8E92B73.js"
 }

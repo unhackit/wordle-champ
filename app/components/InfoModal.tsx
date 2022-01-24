@@ -1,5 +1,5 @@
 type InfoProps = {
-    setInfoModal: (arg0: boolean) => boolean;
+    setInfoModal: (arg0: boolean) => void;
 };
 
 const InfoModal = ({ setInfoModal }: InfoProps) => {
