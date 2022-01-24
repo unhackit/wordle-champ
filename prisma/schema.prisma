@@ -21,8 +21,3 @@ model User {
   country        String
   countryEmoji          String
 }
-
-model Words {
-  id String @id @default(uuid())
-  word String
-}
