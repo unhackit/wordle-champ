@@ -526,18 +526,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   bottom: 2rem;
 }
 
-.right-0 {
-  right: 0px;
-}
-
-.right-4 {
-  right: 1rem;
-}
-
-.top-4 {
-  top: 1rem;
-}
-
 .z-20 {
   z-index: 20;
 }
@@ -606,10 +594,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .block {
@@ -775,10 +759,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   place-items: end;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-center {
   align-items: center;
 }
@@ -805,10 +785,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-3 {
   gap: 0.75rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .rounded-sm {
@@ -1122,11 +1098,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-600 {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity));
-}
-
-.text-gray-400 {
-  --tw-text-opacity: 1;
-  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .underline {

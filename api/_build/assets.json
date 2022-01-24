@@ -1,5 +1,5 @@
 {
-  "version": "7b81c2b5",
+  "version": "4d6b7146",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-ATZXQQMQ.js",
+      "module": "/build/root-5L7PXLVX.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -122,7 +122,17 @@
       "hasLoader": false,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
+    },
+    "routes/versus": {
+      "id": "routes/versus",
+      "parentId": "root",
+      "path": "versus",
+      "module": "/build/routes/versus-PV235ZGO.js",
+      "hasAction": false,
+      "hasLoader": false,
+      "hasCatchBoundary": false,
+      "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-7B81C2B5.js"
+  "url": "/build/manifest-4D6B7146.js"
 }

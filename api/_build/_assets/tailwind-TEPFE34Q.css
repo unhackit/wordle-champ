@@ -608,10 +608,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1.5rem;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
 .block {
   display: block;
 }
@@ -805,10 +801,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-3 {
   gap: 0.75rem;
-}
-
-.gap-2 {
-  gap: 0.5rem;
 }
 
 .rounded-sm {

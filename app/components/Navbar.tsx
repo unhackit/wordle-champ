@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "remix";
 import { User } from "~/types/types";
+import InfoModal from "./InfoModal";
 
 type NavbarProps = {
     user: User;
@@ -8,16 +9,24 @@ type NavbarProps = {
 
 const Navbar = ({ user }: NavbarProps) => {
     const [navbar, setNavbar] = useState<boolean>(false);
+    const [infoModal, setInfoModal] = useState<boolean>(false);
 
     return (
         <>
             <div className="px-4 py-3 fixed top-0 w-full z-80 bg-blackbg bg-opacity-90">
                 <div className="flex justify-between">
-                    <p className="text-white font-courgette text-3xl font-bold">Wordle Champ</p>
-                    <div className="cursor-pointer" onClick={() => setNavbar(!navbar)}>
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill={"#fff"} viewBox="0 0 24 24" stroke={"#fff"}>
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                    <Link to="/" className="text-white font-courgette text-3xl font-bold">
+                        Wordle Champ
+                    </Link>
+                    <div className="flex gap-4 items-center">
+                        <i className="text-white font-bold text-xl cursor-pointer" onClick={() => setInfoModal(true)}>
+                            ⓘ
+                        </i>
+                        <div className="cursor-pointer" onClick={() => setNavbar(!navbar)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill={"#fff"} viewBox="0 0 24 24" stroke={"#fff"}>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,7 +35,9 @@ const Navbar = ({ user }: NavbarProps) => {
                     navbar ? "opacity-100" : "opacity-0 -z-10"
                 }`}
             >
-                <p className="text-white font-courgette text-3xl font-bold">Wordle Champ</p>
+                <Link to="/" reloadDocument className="text-white font-courgette text-3xl font-bold">
+                    Wordle Champ
+                </Link>
                 <div className="h-full w-full flex items-center">
                     <ul>
                         <li className="my-8">
@@ -60,6 +71,15 @@ const Navbar = ({ user }: NavbarProps) => {
                             <Link
                                 reloadDocument
                                 className="text-gray-200 cursor-pointer text-2xl hover:underline hover:text-sky-400"
+                                to="/versus"
+                            >
+                                1 vs 1
+                            </Link>
+                        </li>
+                        <li className="my-8">
+                            <Link
+                                reloadDocument
+                                className="text-gray-200 cursor-pointer text-2xl hover:underline hover:text-sky-400"
                                 to={user ? "/logout" : "/login"}
                             >
                                 {user ? "Logout" : "Login"}
@@ -68,6 +88,7 @@ const Navbar = ({ user }: NavbarProps) => {
                     </ul>
                 </div>
             </div>
+            {infoModal && <InfoModal setInfoModal={setInfoModal} />}
         </>
     );
 };

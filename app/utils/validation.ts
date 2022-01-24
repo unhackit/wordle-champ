@@ -1,6 +1,6 @@
 export function validateUsername(username: unknown) {
-    if (typeof username !== "string" || username.length < 3) {
-        return `Username must be at least 3 characters long`;
+    if (typeof username !== "string" || username.length < 3 || username.length > 10) {
+        return `Length of Username must be between 3 and 10 characters`;
     }
 }
 
