@@ -11,13 +11,13 @@ const InfoModal = ({ setInfoModal }: InfoProps) => {
                 </i>
 
                 <div className="text-center">
-                    <p className="text-4xl font-bold m-0 p-0 text-white">How To Play</p>
-                    <p className="text-white my-6 text-lg">You MUST guess the correct word in 6 tries</p>
-                    <p className="text-white my-6 text-lg">
+                    <p className="text-xl md:text-2xl lg:text-4xl font-bold m-0 p-0 text-white">How To Play</p>
+                    <p className="text-white my-6 text-md md:text-lg">You MUST guess the correct word in 6 tries</p>
+                    <p className="text-white my-6 text-md md:text-lg">
                         Each word contains 5 letters which you should input with the onscreen keyboard, after which you must hit the enter
                         key
                     </p>
-                    <p className="text-white my-6 text-lg">
+                    <p className="text-white my-6 text-md md:text-lg">
                         You will start at 6 points, and a point will get deducted for every word you guess wrongly
                     </p>
                     <p className="my-4 text-2xl text-white font-bold">HINTS</p>
