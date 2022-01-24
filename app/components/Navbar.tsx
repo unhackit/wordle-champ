@@ -9,7 +9,7 @@ type NavbarProps = {
 
 const Navbar = ({ user }: NavbarProps) => {
     const [navbar, setNavbar] = useState<boolean>(false);
-    const [infoModal, setInfoModal] = useState<boolean>(false);
+    const [infoModal, setInfoModal] = useState<boolean>(true);
 
     return (
         <>
