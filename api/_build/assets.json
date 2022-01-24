@@ -1,5 +1,5 @@
 {
-  "version": "aacf5aab",
+  "version": "7b81c2b5",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -77,7 +77,7 @@
       "id": "routes/play",
       "parentId": "root",
       "path": "play",
-      "module": "/build/routes/play-ZR7CQDKG.js",
+      "module": "/build/routes/play-I4O6GXC5.js",
       "imports": [
         "/build/_shared/chunk-ZVDZFBK3.js",
         "/build/_shared/chunk-JHG2B4Q5.js"
@@ -124,5 +124,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-AACF5AAB.js"
+  "url": "/build/manifest-7B81C2B5.js"
 }

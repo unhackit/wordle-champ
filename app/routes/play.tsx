@@ -1,30 +1,19 @@
 import { useState } from "react";
 import { ActionFunction, Link, LoaderFunction, Outlet, redirect, useLoaderData, useSubmit } from "remix";
-import type { Words } from "@prisma/client";
-import { db } from "~/utils/db.server";
 import Keyboard from "~/components/Keyboard";
 import { keyStyle, Response } from "~/types/types";
 import { updateScore } from "~/utils/queries.server";
 import { getUserId } from "~/utils/session.server";
 import { toastHandler } from "~/utils/toastHandler";
+import words from "~/words";
 
-type LoaderData = { words: Array<Words> };
 export let loader: LoaderFunction = async ({ request }) => {
-    //TODO => return only one random word from DB
-    //TODO => REMOVE number from word schema
-    const data: LoaderData = {
-        words: await db.words.findMany(),
-    };
-
-    let formattedWords = data.words.map((word) => word.word);
-
     let random = Math.floor(Math.random() * 9337);
-    console.log(formattedWords.length);
-    let randomWord = formattedWords[random].toUpperCase();
+    let randomWord = words[random].toUpperCase();
 
     console.log(randomWord);
     return {
-        allWords: formattedWords,
+        allWords: words,
         wordToGuess: randomWord,
         initialResponse: Array.from({ length: 6 }, (e) =>
             Array.from({ length: 5 }, () => ({ letter: "", className: "text-white bg-blue" }))
