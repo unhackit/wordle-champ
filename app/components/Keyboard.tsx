@@ -16,7 +16,9 @@ const Keyboard = (props: Props) => {
                         return (
                             <span
                                 onClick={() => props.addLetter(letter)}
-                                className={`border-2 border-gray-300 rounded-sm w-14 h-12 flex items-center justify-center mx-1 my-2 cursor-pointer ${props.keyStyle[letter]}`}
+                                className={`border-2  border-gray-300 rounded-sm w-14 h-12 flex items-center justify-center mx-1 my-2 cursor-pointer ${
+                                    props.keyStyle[letter] || "bg-gray-300"
+                                }`}
                                 key={letter}
                             >
                                 {letter === "CLR" ? (
