@@ -15,9 +15,13 @@ export let loader: LoaderFunction = async ({ request }) => {
     const data: LoaderData = {
         words: await db.words.findMany(),
     };
+
     let formattedWords = data.words.map((word) => word.word);
+
     let random = Math.floor(Math.random() * 9337);
+    console.log(formattedWords.length);
     let randomWord = formattedWords[random].toUpperCase();
+
     console.log(randomWord);
     return {
         allWords: formattedWords,
