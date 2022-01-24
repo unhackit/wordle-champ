@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "remix";
 import { User } from "~/types/types";
 import InfoModal from "./InfoModal";
@@ -9,7 +9,7 @@ type NavbarProps = {
 
 const Navbar = ({ user }: NavbarProps) => {
     const [navbar, setNavbar] = useState<boolean>(false);
-    const [infoModal, setInfoModal] = useState<boolean>(true);
+    const [infoModal, setInfoModal] = useState<any>(false);
 
     return (
         <>

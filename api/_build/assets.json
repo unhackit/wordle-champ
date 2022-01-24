@@ -1,5 +1,5 @@
 {
-  "version": "01a082fc",
+  "version": "f29100f5",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-N7ROPM6D.js",
+      "module": "/build/root-TGVXBKDW.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -91,9 +91,9 @@
       "id": "routes/play/lose",
       "parentId": "routes/play",
       "path": "lose",
-      "module": "/build/routes/play/lose-DBAIG67B.js",
+      "module": "/build/routes/play/lose-6WWDOMGG.js",
       "imports": [
-        "/build/_shared/chunk-H6TOFZRP.js"
+        "/build/_shared/chunk-WAQVC72J.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -104,9 +104,9 @@
       "id": "routes/play/win",
       "parentId": "routes/play",
       "path": "win",
-      "module": "/build/routes/play/win-6NSPZEXW.js",
+      "module": "/build/routes/play/win-V77X2PXB.js",
       "imports": [
-        "/build/_shared/chunk-H6TOFZRP.js"
+        "/build/_shared/chunk-WAQVC72J.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -134,5 +134,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-01A082FC.js"
+  "url": "/build/manifest-F29100F5.js"
 }
