@@ -11,8 +11,7 @@
 ## CONTRIBUTING
 
 -   I'm happy to add more features to this with your help! You can see the [Contributing Guidelines](https://github.com/unhackit/wordle-champ/blob/master/CONTRIBUTING.md/) here
-From your terminal:
-<!--
+<!-- From your terminal:
 
 ```sh
 npm run dev
