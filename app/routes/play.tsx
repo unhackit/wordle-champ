@@ -37,7 +37,7 @@ export let action: ActionFunction = async ({ request }) => {
                 return;
             }
         }
-        redirectTo = "/play/win";
+        redirectTo = `/play/win?score=${score}`;
     }
 
     if (status === "lose") {
@@ -114,6 +114,7 @@ const Play = () => {
             submit({ status, score: String(6 - currentRow) }, { method: "post" });
         } else {
             submit({ status }, { method: "post" });
+            toastHandler(`WORD: ${wordToGuess}`, 4000);
         }
     };
 
