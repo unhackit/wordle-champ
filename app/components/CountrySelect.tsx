@@ -19,7 +19,7 @@ const CountrySelect = () => {
         }),
         singleValue: (provided: Object) => ({
             ...provided,
-            fontSize: "18px",
+            fontSize: "1em",
         }),
     };
 
