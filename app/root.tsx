@@ -1,4 +1,16 @@
-import { Links, LinksFunction, LiveReload, LoaderFunction, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "remix";
+import {
+    ActionFunction,
+    Links,
+    LinksFunction,
+    LiveReload,
+    LoaderFunction,
+    Meta,
+    Outlet,
+    redirect,
+    Scripts,
+    ScrollRestoration,
+    useLoaderData,
+} from "remix";
 import type { MetaFunction } from "remix";
 import styles from "./tailwind.css";
 import { ToastContainer } from "react-toastify";
@@ -6,6 +18,7 @@ import toastStyles from "./global.css";
 import Navbar from "./components/Navbar";
 import { getUser } from "./utils/session.server";
 import { User } from "./types/types";
+import { userPrefs } from "./cookies";
 
 export const meta: MetaFunction = () => {
     return {

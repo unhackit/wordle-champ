@@ -1,5 +1,5 @@
 {
-  "version": "d3a31faf",
+  "version": "6801ac61",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-VCHHMMIQ.js",
+      "module": "/build/root-ICUC4UAC.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-D3A31FAF.js"
+  "url": "/build/manifest-6801AC61.js"
 }

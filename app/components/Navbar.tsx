@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "remix";
+import { useEffect, useState } from "react";
+import { Form, Link } from "remix";
 import { User } from "~/types/types";
 import InfoModal from "./InfoModal";
 
@@ -8,8 +8,39 @@ type NavbarProps = {
 };
 
 const Navbar = ({ user }: NavbarProps) => {
-    const [navbar, setNavbar] = useState<boolean>(false);
-    const [infoModal, setInfoModal] = useState<any>(false);
+    const [navbar, setNavbar] = useState<string | null>("unset");
+    const [infoModal, setInfoModal] = useState<string | null>(null);
+
+    useEffect(() => {
+        toggleNavbar();
+        if (!localStorage.getItem("infoModal")) {
+            setInfoModal("show");
+            localStorage.setItem("infoModal", "show");
+            return;
+        }
+    }, []);
+
+    const toggleNavbar = () => {
+        if (navbar === "unset") {
+            setNavbar(null);
+            return;
+        }
+        if (navbar) {
+            localStorage.removeItem("isNavbar");
+            setNavbar(null);
+        } else {
+            setNavbar("show");
+            localStorage.setItem("isNavbar", "show");
+        }
+    };
+
+    const toggleInfoModal = () => {
+        if (infoModal) {
+            setInfoModal(null);
+        } else {
+            setInfoModal("show");
+        }
+    };
 
     return (
         <>
@@ -19,11 +50,18 @@ const Navbar = ({ user }: NavbarProps) => {
                         Wordle Champ
                     </Link>
                     <div className="flex gap-4 items-center">
-                        <i className="text-white font-bold text-xl cursor-pointer" onClick={() => setInfoModal(true)}>
+                        <i className="text-white font-bold text-xl cursor-pointer" onClick={() => toggleInfoModal()}>
                             ⓘ
                         </i>
-                        <div className="cursor-pointer" onClick={() => setNavbar(!navbar)}>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill={"#fff"} viewBox="0 0 24 24" stroke={"#fff"}>
+                        <div className="cursor-pointer" onClick={() => toggleNavbar()}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-8 w-8"
+                                fill={"#fff"}
+                                viewBox="0 0 24 24"
+                                stroke={"#fff"}
+                                onClick={() => toggleNavbar()}
+                            >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </div>
@@ -88,7 +126,7 @@ const Navbar = ({ user }: NavbarProps) => {
                     </ul>
                 </div>
             </div>
-            {infoModal && <InfoModal setInfoModal={setInfoModal} />}
+            {infoModal && <InfoModal toggleInfoModal={toggleInfoModal} />}
         </>
     );
 };

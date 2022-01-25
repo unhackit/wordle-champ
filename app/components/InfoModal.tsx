@@ -1,12 +1,12 @@
 type InfoProps = {
-    setInfoModal: (arg0: boolean) => void;
+    toggleInfoModal: () => void;
 };
 
-const InfoModal = ({ setInfoModal }: InfoProps) => {
+const InfoModal = ({ toggleInfoModal }: InfoProps) => {
     return (
         <div className="w-screen h-screen bg-black bg-opacity-80 fixed z-50 top-0 left-0 flex items-center justify-center">
             <div className="w-11/12 lg:w-1/3 min-h-1/3 bg-blackbg rounded-xl  px-5 py-6 flex items-center relative justify-center text-black">
-                <i className="absolute top-4 right-4 text-4xl font-bold text-gray-200 cursor-pointer" onClick={() => setInfoModal(false)}>
+                <i className="absolute top-4 right-4 text-4xl font-bold text-gray-200 cursor-pointer" onClick={() => toggleInfoModal()}>
                     {"✗"}
                 </i>
 
@@ -14,7 +14,7 @@ const InfoModal = ({ setInfoModal }: InfoProps) => {
                     <p className="text-xl md:text-2xl lg:text-4xl font-bold m-0 p-0 text-white">How To Play</p>
                     <p className="text-white my-6 text-md md:text-lg">You MUST guess the correct word in 6 tries</p>
                     <p className="text-white my-6 text-md md:text-lg">
-                        Each word contains 5 letters which you should input with the onscreen keyboard, after which you must hit the enter
+                        Each word contains 5 letters which you should enter into the 5 boxes in a row, after which you must hit the enter
                         key
                     </p>
                     <p className="text-white my-6 text-md md:text-lg">
