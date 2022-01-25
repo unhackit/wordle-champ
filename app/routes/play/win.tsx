@@ -14,7 +14,7 @@ const Win = () => {
         <Modal
             icon={"✓"}
             title={"YIPEE!!"}
-            message={`Congratulations! You have WON this round ${score && `and gained ${score} points`}!`}
+            message={`Congratulations! You have WON this round ${score && `and gained ${score} point${score > 1 && `s`}!`}`}
             iconStyle={"text-green-600 text-8xl m-0 p-0"}
         />
     );

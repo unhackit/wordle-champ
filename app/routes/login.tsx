@@ -74,6 +74,13 @@ const Login = () => {
                                     </p>
                                 ) : null}
                             </div>
+                            <div id="form-error-message">
+                                {actionData?.formError ? (
+                                    <p className="text-sm text-red-500" role="alert">
+                                        {actionData?.formError}
+                                    </p>
+                                ) : null}
+                            </div>
                             <div className="text-right">
                                 <button className="bg-sky-500 px-5 py-3 rounded-md text-white text-center cursor-pointer w-2/4 text-sm md:text-lg">
                                     Submit
