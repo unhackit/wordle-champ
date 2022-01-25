@@ -93,13 +93,11 @@ const Play = () => {
         if (!word.length) return;
         let responseTuple = [...responses];
         responseTuple[currentRowRef.current][word.length - 1].letter = "";
-        console.log(responseTuple[currentRowRef.current][word.length - 1]);
         setResponses(responseTuple);
     };
 
     const validateRow = () => {
         let word = getCurrentWord();
-        console.log(word);
         let fullRow = isFullRow(word, 5);
         if (!fullRow) {
             toastHandler("You must enter a 5 letter word", 1000);
@@ -151,7 +149,6 @@ const Play = () => {
                 keys[word[i].letter] = "text-white bg-yellow-600";
                 word[i].className = "text-white bg-yellow-600";
                 wordToGuessArray.splice(wordToGuess.indexOf(word[i].letter), 1, "");
-                console.log(wordToGuessArray);
             } else {
                 word[i].className = "text-white bg-gray-600";
                 keys[word[i].letter] = "text-white bg-gray-900";
@@ -162,7 +159,7 @@ const Play = () => {
         setResponses(responseTuple);
         currentRowRef.current = currentRowRef.current + 1;
         setCurrentRow((c) => c + 1);
-        let gameStatus = currentWord === wordToGuess ? "win" : currentRow === 5 ? "lose" : null;
+        let gameStatus = currentWord === wordToGuess ? "win" : currentRowRef.current === 6 ? "lose" : null;
         if (gameStatus) {
             endGame(gameStatus);
         }
