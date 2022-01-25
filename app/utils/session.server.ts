@@ -18,11 +18,23 @@ type RegisterForm = {
 export async function register({ username, password, country, countryEmoji }: RegisterForm) {
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
-    const user = await db.user.create({
-        data: { username, passwordHash, score: 0, country, countryEmoji },
+    let userExists = await db.user.findFirst({
+        where: { username },
     });
 
-    return user;
+    if (userExists) {
+        return false;
+    }
+
+    try {
+        const user = await db.user.create({
+            data: { username, passwordHash, score: 0, country, countryEmoji },
+        });
+
+        return user;
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export async function login({ username, password }: LoginForm) {

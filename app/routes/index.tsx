@@ -25,8 +25,8 @@ export default function Index() {
                     <div>
                         <h3 className="text-white text-3xl md:text-5xl font-bold text-center">WORDLE CHAMP</h3>
                         {!user ? (
-                            <p className="text-white text-lg text-center mt-4">
-                                Do you have what it takes to compete globally ?{" "}
+                            <p className="text-white text-lg text-center mt-4 break-words">
+                                Do you have what it takes to compete globally? <br />
                                 <Link to="/register" className="text-sky-400 cursor-pointer">
                                     Sign up
                                 </Link>{" "}
