@@ -1,10 +1,18 @@
-# Welcome to Remix!
+# WORDLE CHAMP!
 
-- [Remix Docs](https://remix.run/docs)
+-   Visit [Wordle Champ](https://www.wordle-champ.vercel.com/) to play
+-   Inspired by Powerlanguage's [Wordle](https://www.powerlanguage.co.uk/wordle/)
 
-## Development
+## Features
 
+-   Global Leaderboard
+-   1 vs 1 (Coming Soon)
+
+## CONTRIBUTING
+
+-   I'm happy to add more features to this with your help! You can see the [Contributing Guidelines](https://github.com/unhackit/wordle-champ/blob/master/CONTRIBUTING.md/) here
 From your terminal:
+<!--
 
 ```sh
 npm run dev
@@ -34,14 +42,14 @@ If you're familiar with deploying node applications, the built-in Remix app serv
 
 Make sure to deploy the output of `remix build`
 
-- `build/`
-- `public/build/`
+-   `build/`
+-   `public/build/`
 
 ### Using a Template
 
 When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
 
-```sh
+````sh
 cd ..
 # create a new project, and pick a pre-configured host
 npx create-remix@latest
@@ -50,4 +58,5 @@ cd my-new-remix-app
 rm -rf app
 # copy your app over
 cp -R ../my-old-remix-app/app app
-```
+``` -->
+````
