@@ -1,5 +1,5 @@
 {
-  "version": "f985d2f7",
+  "version": "d3a31faf",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -52,7 +52,7 @@
       "id": "routes/login",
       "parentId": "root",
       "path": "login",
-      "module": "/build/routes/login-XNTZXUXG.js",
+      "module": "/build/routes/login-6HGN7XAB.js",
       "imports": [
         "/build/_shared/chunk-JHG2B4Q5.js"
       ],
@@ -105,7 +105,7 @@
       "id": "routes/play/win",
       "parentId": "routes/play",
       "path": "win",
-      "module": "/build/routes/play/win-XWDRTDAC.js",
+      "module": "/build/routes/play/win-JVJYWSTA.js",
       "imports": [
         "/build/_shared/chunk-QZLU5T2L.js"
       ],
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-F985D2F7.js"
+  "url": "/build/manifest-D3A31FAF.js"
 }
