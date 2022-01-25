@@ -1,5 +1,5 @@
 {
-  "version": "88c31c67",
+  "version": "79b41ced",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-FSSJVGVD.js",
+      "module": "/build/root-7CLPLOX7.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -78,7 +78,7 @@
       "id": "routes/play",
       "parentId": "root",
       "path": "play",
-      "module": "/build/routes/play-UIW2NR7Z.js",
+      "module": "/build/routes/play-MBJMABMX.js",
       "imports": [
         "/build/_shared/chunk-ZVDZFBK3.js",
         "/build/_shared/chunk-JHG2B4Q5.js"
@@ -105,12 +105,12 @@
       "id": "routes/play/win",
       "parentId": "routes/play",
       "path": "win",
-      "module": "/build/routes/play/win-RMSIFSRT.js",
+      "module": "/build/routes/play/win-XWDRTDAC.js",
       "imports": [
         "/build/_shared/chunk-QZLU5T2L.js"
       ],
       "hasAction": false,
-      "hasLoader": false,
+      "hasLoader": true,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     },
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-88C31C67.js"
+  "url": "/build/manifest-79B41CED.js"
 }
