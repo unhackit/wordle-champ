@@ -100,7 +100,7 @@ const Play = () => {
         let word = getCurrentWord();
         let fullRow = isFullRow(word, 5);
         if (!fullRow) {
-            toastHandler("You must enter a 5 letter word", 1000);
+            toastHandler("You must enter a 5 letter word", 1500);
             return;
         }
         saveResponse();
