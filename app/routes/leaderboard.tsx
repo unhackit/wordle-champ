@@ -2,20 +2,23 @@ import { Link, LoaderFunction, useLoaderData, useSubmit } from "remix";
 import Pagination from "~/components/Pagination";
 import { User } from "~/types/types";
 import { getUsers } from "~/utils/queries.server";
+import { getUser } from "~/utils/session.server";
 
 export let loader: LoaderFunction = async ({ request }) => {
+    let user = await getUser(request);
     const url = new URL(request.url);
     const page: any = url.searchParams.get("page") || 1;
     let perPage = 10;
     let skip = perPage * page - perPage;
     const { users, totalUsers } = await getUsers(skip, perPage);
     let lastPage = Math.ceil(totalUsers / perPage);
-    return { users, totalUsers, page, lastPage, perPage };
+    return { users, totalUsers, page, lastPage, perPage, user };
 };
 
 const Leaderboard = () => {
     const submit = useSubmit();
-    const { users, totalUsers, page, lastPage, perPage } = useLoaderData();
+    const { users, totalUsers, page, lastPage, perPage, user } = useLoaderData();
+    console.log(user);
 
     const paginate = (goTo: number) => {
         if (goTo < 1 || goTo > +lastPage) {
@@ -30,6 +33,7 @@ const Leaderboard = () => {
                 <div className="flex justify-center items-center h-full w-full">
                     <div className="bg-white rounded-lg w-11/12 md:w-2/4 p-6 min-h-min">
                         <h3 className="text-center text-2xl mb-6 font-bold">Leaderboard</h3>
+                        {!user && <p className="text-blue-600">You have to sign in to appear on the leaderboard</p>}
                         <table className="border-collapse w-full">
                             <thead>
                                 <tr className="shadow-md">

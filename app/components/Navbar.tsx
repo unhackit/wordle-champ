@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "remix";
 import { User } from "~/types/types";
 import InfoModal from "./InfoModal";

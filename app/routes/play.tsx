@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { isFullRow, validateEntry } from "~/helpers/validateEntry";
+import { useEffect, useRef, useState } from "react";
 import { ActionFunction, Link, LoaderFunction, Outlet, redirect, useLoaderData, useSubmit } from "remix";
 import Keyboard from "~/components/Keyboard";
 import { keyStyle, Response } from "~/types/types";
@@ -53,56 +54,58 @@ const Play = () => {
     const [responses, setResponses] = useState<Response[][]>(initialResponse);
     const [wrongGuess, setWrongGuess] = useState<boolean>(false);
     const [keyStyle, setKeyStyle] = useState<keyStyle>({});
+    const currentRowRef = useRef(currentRow);
 
     const getCurrentWord = () => {
-        return responses[currentRow].map((elem) => elem.letter).join("");
+        return responses[currentRowRef.current].map((elem) => elem.letter).join("");
     };
 
-    const addLetter = (letter: string) => {
-        let responseTuple = [...responses];
-        let rowWord = getCurrentWord();
-
-        if (letter.toLowerCase() === "enter") {
-            saveEntry();
+    const handleEntry = (letter: string) => {
+        let entry = validateEntry(letter);
+        if (!entry) {
             return;
         }
 
-        if (letter.toLowerCase() === "clr") {
+        let responseTuple = [...responses];
+        let rowWord = getCurrentWord();
+
+        if (entry === "ENTER") {
+            validateRow();
+            return;
+        }
+
+        if (entry === "BACKSPACE") {
             setWrongGuess(false);
             removeLetter();
             return;
         }
 
-        let validated = validateEntry(rowWord);
-        if (!validated) return;
+        let fullRow = isFullRow(rowWord, 5);
 
-        responseTuple[currentRow][rowWord.length].letter = letter;
+        if (fullRow) return;
+
+        responseTuple[currentRowRef.current][rowWord.length].letter = entry;
         setResponses(responseTuple);
     };
 
     const removeLetter = () => {
         let word = getCurrentWord();
-        if (word.length === 0) {
-            return;
-        }
+        if (!word.length) return;
         let responseTuple = [...responses];
-        responseTuple[currentRow][word.length - 1].letter = "";
+        responseTuple[currentRowRef.current][word.length - 1].letter = "";
+        console.log(responseTuple[currentRowRef.current][word.length - 1]);
         setResponses(responseTuple);
     };
 
-    const validateEntry = (rowWord: string) => {
-        if (rowWord.length === 5) {
-            return false;
-        }
-        return true;
-    };
-
-    const saveEntry = () => {
-        let validated = saveResponse();
-        if (!validated) {
+    const validateRow = () => {
+        let word = getCurrentWord();
+        console.log(word);
+        let fullRow = isFullRow(word, 5);
+        if (!fullRow) {
+            toastHandler("You must enter a 5 letter word", 1000);
             return;
         }
-        setCurrentRow((c) => c + 1);
+        saveResponse();
     };
 
     const endGame = async (status: string) => {
@@ -132,23 +135,23 @@ const Play = () => {
     const saveResponse = () => {
         let responseTuple = [...responses];
         let currentWord = getCurrentWord();
+        let wordToGuessArray = wordToGuess.split("");
         const keys: keyStyle = {};
-
-        if (currentWord.length < 5) {
-            return false;
-        }
 
         if (!checkDictionary(currentWord)) return false;
 
         for (let i = 0; i < wordToGuess.length; i++) {
-            let word = responseTuple[currentRow];
+            let word = responseTuple[currentRowRef.current];
 
-            if (wordToGuess.includes(word[i].letter) && word[i].letter !== wordToGuess[i]) {
-                keys[word[i].letter] = "text-white bg-yellow-600";
-                word[i].className = "text-white bg-yellow-600";
-            } else if (word[i].letter === wordToGuess[i]) {
+            if (word[i].letter === wordToGuess[i]) {
                 keys[word[i].letter] = "text-white bg-green-800";
                 word[i].className = "text-white bg-green-800";
+                wordToGuessArray.splice(i, 1);
+            } else if (wordToGuessArray.includes(word[i].letter) && word[i].letter !== wordToGuessArray[i]) {
+                keys[word[i].letter] = "text-white bg-yellow-600";
+                word[i].className = "text-white bg-yellow-600";
+                wordToGuessArray.splice(wordToGuess.indexOf(word[i].letter), 1, "");
+                console.log(wordToGuessArray);
             } else {
                 word[i].className = "text-white bg-gray-600";
                 keys[word[i].letter] = "text-white bg-gray-900";
@@ -157,14 +160,21 @@ const Play = () => {
 
         markKeys(keys);
         setResponses(responseTuple);
+        currentRowRef.current = currentRowRef.current + 1;
+        setCurrentRow((c) => c + 1);
         //check if word matches word
         let gameStatus = currentWord === wordToGuess ? "win" : currentRow === 5 ? "lose" : null;
         if (gameStatus) {
             endGame(gameStatus);
         }
-
-        return true;
     };
+
+    useEffect(() => {
+        document.addEventListener("keydown", (e) => handleEntry(e.key));
+        return () => {
+            document.removeEventListener("keydown", (e) => handleEntry(e.key));
+        };
+    }, []);
 
     return (
         <>
@@ -189,7 +199,7 @@ const Play = () => {
                 </div>
 
                 <div className=" w-full absolute bottom-8">
-                    <Keyboard addLetter={addLetter} keyStyle={keyStyle} />
+                    <Keyboard handleEntry={handleEntry} keyStyle={keyStyle} />
                 </div>
                 <Outlet />
             </div>

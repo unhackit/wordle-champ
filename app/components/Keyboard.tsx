@@ -1,7 +1,7 @@
-const letters = "Q,W,E,R,T,Y,U,I,O,P A,S,D,F,G,H,J,K,L Enter,Z,X,C,V,B,N,M,CLR";
+const letters = "Q,W,E,R,T,Y,U,I,O,P A,S,D,F,G,H,J,K,L Enter,Z,X,C,V,B,N,M,Backspace";
 
 interface Props {
-    addLetter: (arg0: string) => void;
+    handleEntry: (arg0: string) => void;
     keyStyle: {
         [key: string]: string;
     };
@@ -15,13 +15,13 @@ const Keyboard = (props: Props) => {
                     {row.split(",").map((letter) => {
                         return (
                             <span
-                                onClick={() => props.addLetter(letter)}
+                                onClick={() => props.handleEntry(letter)}
                                 className={`border-2  border-gray-300 rounded-sm w-14 h-12 flex items-center justify-center mx-1 my-2 cursor-pointer ${
                                     props.keyStyle[letter] || "bg-gray-300"
                                 }`}
                                 key={letter}
                             >
-                                {letter === "CLR" ? (
+                                {letter === "Backspace" ? (
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         className="h-6 w-6"

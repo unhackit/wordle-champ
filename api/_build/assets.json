@@ -1,5 +1,5 @@
 {
-  "version": "f29100f5",
+  "version": "7bae6a26",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-TGVXBKDW.js",
+      "module": "/build/root-FSSJVGVD.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -38,9 +38,10 @@
       "id": "routes/leaderboard",
       "parentId": "root",
       "path": "leaderboard",
-      "module": "/build/routes/leaderboard-YZBAFYOE.js",
+      "module": "/build/routes/leaderboard-X7D2F2KO.js",
       "imports": [
-        "/build/_shared/chunk-ZVDZFBK3.js"
+        "/build/_shared/chunk-ZVDZFBK3.js",
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -77,7 +78,7 @@
       "id": "routes/play",
       "parentId": "root",
       "path": "play",
-      "module": "/build/routes/play-XEHPL6M4.js",
+      "module": "/build/routes/play-CH26NJ2O.js",
       "imports": [
         "/build/_shared/chunk-ZVDZFBK3.js",
         "/build/_shared/chunk-JHG2B4Q5.js"
@@ -91,9 +92,9 @@
       "id": "routes/play/lose",
       "parentId": "routes/play",
       "path": "lose",
-      "module": "/build/routes/play/lose-6WWDOMGG.js",
+      "module": "/build/routes/play/lose-CVHFHLVG.js",
       "imports": [
-        "/build/_shared/chunk-WAQVC72J.js"
+        "/build/_shared/chunk-QZLU5T2L.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -104,9 +105,9 @@
       "id": "routes/play/win",
       "parentId": "routes/play",
       "path": "win",
-      "module": "/build/routes/play/win-V77X2PXB.js",
+      "module": "/build/routes/play/win-RMSIFSRT.js",
       "imports": [
-        "/build/_shared/chunk-WAQVC72J.js"
+        "/build/_shared/chunk-QZLU5T2L.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -134,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-F29100F5.js"
+  "url": "/build/manifest-7BAE6A26.js"
 }
