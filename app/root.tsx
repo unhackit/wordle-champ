@@ -8,7 +8,10 @@ import { getUser } from "./utils/session.server";
 import { User } from "./types/types";
 
 export const meta: MetaFunction = () => {
-    return { title: "Wordle App" };
+    return {
+        title: "WORDLE CHAMP - Built with Remix!",
+        description: "Do you have what it takes to compete globally? Play now!",
+    };
 };
 
 export const links: LinksFunction | any = () => {

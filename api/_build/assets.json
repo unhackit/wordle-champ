@@ -1,5 +1,5 @@
 {
-  "version": "79b41ced",
+  "version": "e87be992",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -12,7 +12,7 @@
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-7CLPLOX7.js",
+      "module": "/build/root-VCHHMMIQ.js",
       "imports": [
         "/build/_shared/chunk-XWEUBDOU.js"
       ],
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-79B41CED.js"
+  "url": "/build/manifest-E87BE992.js"
 }
