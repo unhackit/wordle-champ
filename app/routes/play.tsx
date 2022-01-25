@@ -162,7 +162,6 @@ const Play = () => {
         setResponses(responseTuple);
         currentRowRef.current = currentRowRef.current + 1;
         setCurrentRow((c) => c + 1);
-        //check if word matches word
         let gameStatus = currentWord === wordToGuess ? "win" : currentRow === 5 ? "lose" : null;
         if (gameStatus) {
             endGame(gameStatus);
