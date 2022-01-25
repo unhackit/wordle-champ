@@ -1,5 +1,5 @@
 {
-  "version": "5ea98fb5",
+  "version": "f985d2f7",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -118,7 +118,7 @@
       "id": "routes/register",
       "parentId": "root",
       "path": "register",
-      "module": "/build/routes/register-3EFAYRST.js",
+      "module": "/build/routes/register-JKEGISIJ.js",
       "hasAction": true,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-5EA98FB5.js"
+  "url": "/build/manifest-F985D2F7.js"
 }

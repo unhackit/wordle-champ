@@ -47,7 +47,7 @@ const Register = () => {
         <>
             <div className="bg-blackbg h-screen w-screen">
                 <div className="h-full w-full flex items-center justify-center">
-                    <div className="bg-white w-11/12 md:w-2/4 lg:w-1/3 h-4/5 p-8 rounded-lg flex items-center justify-center">
+                    <div className="bg-white w-11/12 md:w-2/4 lg:w-1/3 h-4/5 p-6 rounded-lg flex items-center justify-center">
                         <Form
                             method="post"
                             className="w-full"
@@ -56,7 +56,7 @@ const Register = () => {
                         >
                             <legend className="text-2xl font-bold">Register</legend>
                             <div className="my-6">
-                                <label className="block text-xl" htmlFor="username">
+                                <label className="block text-md md:text-xl" htmlFor="username">
                                     Username
                                 </label>
                                 <input
@@ -65,7 +65,7 @@ const Register = () => {
                                     autoCorrect="off"
                                     name="username"
                                     placeholder="Enter Username"
-                                    className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-lg"
+                                    className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-md md:text-lg"
                                     defaultValue={actionData?.fields?.username}
                                     aria-invalid={Boolean(actionData?.fieldErrors?.username)}
                                     aria-describedby={actionData?.fieldErrors?.username ? "username-error" : undefined}
@@ -77,7 +77,7 @@ const Register = () => {
                                 ) : null}
                             </div>
                             <div className="my-6">
-                                <label className="block text-xl" htmlFor="country">
+                                <label className="block text-md md:text-xl" htmlFor="country">
                                     Country
                                 </label>
                                 <CountrySelect />
@@ -89,7 +89,7 @@ const Register = () => {
                             </div>
 
                             <div className="my-6">
-                                <label className="block text-xl" htmlFor="password">
+                                <label className="block text-md md:text-xl" htmlFor="password">
                                     Password
                                 </label>
                                 <input
@@ -97,7 +97,7 @@ const Register = () => {
                                     name="password"
                                     placeholder="Enter Password"
                                     type="password"
-                                    className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-lg"
+                                    className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-md md:text-lg"
                                     defaultValue={actionData?.fields?.password}
                                     aria-invalid={Boolean(actionData?.fieldErrors?.password) || undefined}
                                     aria-describedby={actionData?.fieldErrors?.password ? "password-error" : undefined}
