@@ -1,4 +1,4 @@
-import { ActionFunction, Form, json, Link } from "remix";
+import { ActionFunction, Form, json, Link, useActionData } from "remix";
 import { ActionData } from "~/types/types";
 import { createUserSession, login } from "~/utils/session.server";
 import { validatePassword, validateUsername } from "~/utils/validation";
@@ -36,6 +36,8 @@ export let action: ActionFunction = async ({ request }) => {
 };
 
 const Login = () => {
+    const actionData = useActionData();
+
     return (
         <>
             <div className="bg-blackbg h-screen w-screen">
@@ -52,6 +54,11 @@ const Login = () => {
                                     placeholder="Enter Username"
                                     className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-lg"
                                 />
+                                {actionData?.fieldErrors?.username ? (
+                                    <p className="text-sm text-red-500" role="alert" id="password-error">
+                                        {actionData?.fieldErrors.username}
+                                    </p>
+                                ) : null}
                             </div>
                             <div className="my-6">
                                 <label className="block text-xl">Password</label>
@@ -61,6 +68,11 @@ const Login = () => {
                                     type="password"
                                     className="p-4 rounded-md w-full border-blackbg border-solid border-2 bg-transparent text-lg"
                                 />
+                                {actionData?.fieldErrors?.password ? (
+                                    <p className="text-sm text-red-500" role="alert" id="password-error">
+                                        {actionData?.fieldErrors.password}
+                                    </p>
+                                ) : null}
                             </div>
                             <div className="text-right">
                                 <button className="bg-sky-500 px-5 py-3 rounded-md text-white text-center cursor-pointer w-2/4 text-sm md:text-lg">

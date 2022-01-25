@@ -1,5 +1,5 @@
 {
-  "version": "e87be992",
+  "version": "5ea98fb5",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -52,7 +52,7 @@
       "id": "routes/login",
       "parentId": "root",
       "path": "login",
-      "module": "/build/routes/login-A3HSJ5B2.js",
+      "module": "/build/routes/login-XNTZXUXG.js",
       "imports": [
         "/build/_shared/chunk-JHG2B4Q5.js"
       ],
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-E87BE992.js"
+  "url": "/build/manifest-5EA98FB5.js"
 }
