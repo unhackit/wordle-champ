@@ -1,5 +1,5 @@
 {
-  "version": "6801ac61",
+  "version": "08309f76",
   "entry": {
     "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
@@ -25,7 +25,7 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-PVPJSNM3.js",
+      "module": "/build/routes/index-JQEIN3EJ.js",
       "imports": [
         "/build/_shared/chunk-JHG2B4Q5.js"
       ],
@@ -118,7 +118,7 @@
       "id": "routes/register",
       "parentId": "root",
       "path": "register",
-      "module": "/build/routes/register-JKEGISIJ.js",
+      "module": "/build/routes/register-EUNEP2ZJ.js",
       "hasAction": true,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -135,5 +135,5 @@
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-6801AC61.js"
+  "url": "/build/manifest-08309F76.js"
 }

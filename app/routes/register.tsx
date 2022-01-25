@@ -34,7 +34,7 @@ export let action: ActionFunction = async ({ request }) => {
     if (!user) {
         return {
             fields,
-            formError: `Username/Password combination is incorrect`,
+            formError: `The username exists already`,
         };
     }
     return createUserSession(user.id, "/play");

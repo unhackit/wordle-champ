@@ -800,10 +800,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   word-break: normal;
 }
 
-.break-words {
-  overflow-wrap: break-word;
-}
-
 .rounded-xl {
   border-radius: 0.75rem;
 }
