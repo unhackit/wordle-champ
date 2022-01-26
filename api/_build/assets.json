@@ -1,20 +1,20 @@
 {
-  "version": "cd4c05e5",
+  "version": "d7c6611a",
   "entry": {
-    "module": "/build/entry.client-DJLZYWC4.js",
+    "module": "/build/entry.client-J3KTR6PD.js",
     "imports": [
-      "/build/_shared/chunk-DGNGNE3C.js",
-      "/build/_shared/chunk-PQUTXFLJ.js",
-      "/build/_shared/chunk-AKSB5QXU.js"
+      "/build/_shared/chunk-OQ4VQ54M.js",
+      "/build/_shared/chunk-2EU4YC4G.js",
+      "/build/_shared/chunk-E7VMOUYL.js"
     ]
   },
   "routes": {
     "root": {
       "id": "root",
       "path": "",
-      "module": "/build/root-PB6VVUG3.js",
+      "module": "/build/root-ICUC4UAC.js",
       "imports": [
-        "/build/_shared/chunk-LN3LKSQU.js"
+        "/build/_shared/chunk-XWEUBDOU.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -25,9 +25,9 @@
       "id": "routes/index",
       "parentId": "root",
       "index": true,
-      "module": "/build/routes/index-O6GUPU4Z.js",
+      "module": "/build/routes/index-JQEIN3EJ.js",
       "imports": [
-        "/build/_shared/chunk-EYYFEV5H.js"
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -38,10 +38,10 @@
       "id": "routes/leaderboard",
       "parentId": "root",
       "path": "leaderboard",
-      "module": "/build/routes/leaderboard-ZJ6FQS3F.js",
+      "module": "/build/routes/leaderboard-X7D2F2KO.js",
       "imports": [
-        "/build/_shared/chunk-AJHDQBEE.js",
-        "/build/_shared/chunk-EYYFEV5H.js"
+        "/build/_shared/chunk-ZVDZFBK3.js",
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -52,9 +52,9 @@
       "id": "routes/login",
       "parentId": "root",
       "path": "login",
-      "module": "/build/routes/login-U43QPWD4.js",
+      "module": "/build/routes/login-6HGN7XAB.js",
       "imports": [
-        "/build/_shared/chunk-EYYFEV5H.js"
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": true,
       "hasLoader": false,
@@ -65,9 +65,9 @@
       "id": "routes/logout",
       "parentId": "root",
       "path": "logout",
-      "module": "/build/routes/logout-YU4LOCXU.js",
+      "module": "/build/routes/logout-NCJIKGFC.js",
       "imports": [
-        "/build/_shared/chunk-EYYFEV5H.js"
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -78,10 +78,10 @@
       "id": "routes/play",
       "parentId": "root",
       "path": "play",
-      "module": "/build/routes/play-IPJP5ZHY.js",
+      "module": "/build/routes/play-FULW6ZRW.js",
       "imports": [
-        "/build/_shared/chunk-AJHDQBEE.js",
-        "/build/_shared/chunk-EYYFEV5H.js"
+        "/build/_shared/chunk-ZVDZFBK3.js",
+        "/build/_shared/chunk-JHG2B4Q5.js"
       ],
       "hasAction": true,
       "hasLoader": true,
@@ -92,9 +92,9 @@
       "id": "routes/play/lose",
       "parentId": "routes/play",
       "path": "lose",
-      "module": "/build/routes/play/lose-YUCGYMMV.js",
+      "module": "/build/routes/play/lose-CVHFHLVG.js",
       "imports": [
-        "/build/_shared/chunk-CXYFJKDS.js"
+        "/build/_shared/chunk-QZLU5T2L.js"
       ],
       "hasAction": false,
       "hasLoader": false,
@@ -105,9 +105,9 @@
       "id": "routes/play/win",
       "parentId": "routes/play",
       "path": "win",
-      "module": "/build/routes/play/win-DEH5OOLB.js",
+      "module": "/build/routes/play/win-JVJYWSTA.js",
       "imports": [
-        "/build/_shared/chunk-CXYFJKDS.js"
+        "/build/_shared/chunk-QZLU5T2L.js"
       ],
       "hasAction": false,
       "hasLoader": true,
@@ -118,7 +118,7 @@
       "id": "routes/register",
       "parentId": "root",
       "path": "register",
-      "module": "/build/routes/register-SFIPAZPU.js",
+      "module": "/build/routes/register-EUNEP2ZJ.js",
       "hasAction": true,
       "hasLoader": false,
       "hasCatchBoundary": false,
@@ -128,12 +128,12 @@
       "id": "routes/versus",
       "parentId": "root",
       "path": "versus",
-      "module": "/build/routes/versus-LHALA3CY.js",
+      "module": "/build/routes/versus-PV235ZGO.js",
       "hasAction": false,
       "hasLoader": false,
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
     }
   },
-  "url": "/build/manifest-CD4C05E5.js"
+  "url": "/build/manifest-D7C6611A.js"
 }
