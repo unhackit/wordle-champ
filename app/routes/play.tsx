@@ -53,8 +53,9 @@ const Play = () => {
     const [currentRow, setCurrentRow] = useState(0);
     const [responses, setResponses] = useState<Response[][]>(initialResponse);
     const [wrongGuess, setWrongGuess] = useState<boolean>(false);
-    const [keyStyle, setKeyStyle] = useState<keyStyle>({});
+    // const [keyStyle, setKeyStyle] = useState<keyStyle>({});
     const currentRowRef = useRef(currentRow);
+    const keyStyle = useRef<{ [key: string]: string }>({});
 
     const getCurrentWord = () => {
         return responses[currentRowRef.current].map((elem) => elem.letter).join("");
@@ -109,7 +110,7 @@ const Play = () => {
     const endGame = async (status: string) => {
         setCurrentRow(0);
         setResponses(Array.from({ length: 6 }, (e) => Array.from({ length: 5 }, () => ({ letter: "", className: "text-white bg-blue" }))));
-        setKeyStyle({});
+        //setKeyStyle({});
         if (status === "win") {
             submit({ status, score: String(6 - currentRow) }, { method: "post" });
         } else {
@@ -118,9 +119,14 @@ const Play = () => {
         }
     };
 
-    const markKeys = (obj: keyStyle) => {
-        setKeyStyle({ ...keyStyle, ...obj });
-    };
+    // const markKeys = (obj: keyStyle) => {
+    //     console.log(keyStyle, obj);
+    //     setKeyStyle({ ...keyStyle, ...obj });
+    // };
+
+    useEffect(() => {
+        console.log(keyStyle);
+    }, [keyStyle]);
 
     const checkDictionary = (word: string) => {
         if (!allWords.includes(word.toLowerCase())) {
@@ -135,7 +141,6 @@ const Play = () => {
         let responseTuple = [...responses];
         let currentWord = getCurrentWord();
         let wordToGuessArray = wordToGuess.split("");
-        const keys: keyStyle = {};
 
         if (!checkDictionary(currentWord)) return false;
 
@@ -143,20 +148,22 @@ const Play = () => {
             let word = responseTuple[currentRowRef.current];
 
             if (word[i].letter === wordToGuess[i]) {
-                keys[word[i].letter] = "text-white bg-green-800";
+                keyStyle.current[word[i].letter] = "text-white bg-green-800";
                 word[i].className = "text-white bg-green-800";
                 wordToGuessArray.splice(i, 1);
             } else if (wordToGuessArray.includes(word[i].letter) && word[i].letter !== wordToGuessArray[i]) {
-                keys[word[i].letter] = "text-white bg-yellow-600";
+                keyStyle.current[word[i].letter] = "text-white bg-yellow-600";
                 word[i].className = "text-white bg-yellow-600";
                 wordToGuessArray.splice(wordToGuess.indexOf(word[i].letter), 1, "");
             } else {
                 word[i].className = "text-white bg-gray-600";
-                keys[word[i].letter] = "text-white bg-gray-900";
+                keyStyle.current[word[i].letter] = "text-white bg-black";
             }
         }
 
-        markKeys(keys);
+        console.log("current state", keyStyle.current);
+
+        //setKeyStyle(keys);
         setResponses(responseTuple);
         currentRowRef.current = currentRowRef.current + 1;
         setCurrentRow((c) => c + 1);
@@ -196,7 +203,7 @@ const Play = () => {
                 </div>
 
                 <div className=" w-full absolute bottom-8">
-                    <Keyboard handleEntry={handleEntry} keyStyle={keyStyle} />
+                    <Keyboard handleEntry={handleEntry} keyStyle={keyStyle.current} />
                 </div>
                 <Outlet />
             </div>
