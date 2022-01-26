@@ -53,7 +53,6 @@ const Play = () => {
     const [currentRow, setCurrentRow] = useState(0);
     const [responses, setResponses] = useState<Response[][]>(initialResponse);
     const [wrongGuess, setWrongGuess] = useState<boolean>(false);
-    // const [keyStyle, setKeyStyle] = useState<keyStyle>({});
     const currentRowRef = useRef(currentRow);
     const keyStyle = useRef<{ [key: string]: string }>({});
 
@@ -119,11 +118,6 @@ const Play = () => {
         }
     };
 
-    // const markKeys = (obj: keyStyle) => {
-    //     console.log(keyStyle, obj);
-    //     setKeyStyle({ ...keyStyle, ...obj });
-    // };
-
     useEffect(() => {
         console.log(keyStyle);
     }, [keyStyle]);
@@ -161,9 +155,6 @@ const Play = () => {
             }
         }
 
-        console.log("current state", keyStyle.current);
-
-        //setKeyStyle(keys);
         setResponses(responseTuple);
         currentRowRef.current = currentRowRef.current + 1;
         setCurrentRow((c) => c + 1);
